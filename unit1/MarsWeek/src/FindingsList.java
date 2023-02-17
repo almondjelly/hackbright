@@ -2,6 +2,8 @@ package unit1.MarsWeek.src;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class FindingsList {
@@ -45,5 +47,29 @@ public class FindingsList {
     } else {
       System.out.println("Sorry, I don't know about that.");
     }
+
+    System.out.println("Figuring out what special supplies have been used...");
+    Thread.sleep(700);
+
+    HashSet<String> supplies = new HashSet<>();
+    supplies.add("emergency water");
+    supplies.add("space blanket");
+    supplies.add("mom's spaghetti");
+
+    System.out.println("Supplies before expedition:");
+    Iterator<String> iterator = supplies.iterator();
+    while (iterator.hasNext()) {
+      System.out.println(iterator.next());
+    }
+
+    supplies.remove("space blanket");
+
+    System.out.println("Supplies after expedition:");
+    iterator = supplies.iterator();
+    while (iterator.hasNext()) {
+      System.out.println(iterator.next());
+    }
+
+    scan.close();
   }
 }
