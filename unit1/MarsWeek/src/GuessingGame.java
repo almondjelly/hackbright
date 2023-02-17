@@ -1,11 +1,47 @@
 package unit1.MarsWeek.src;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class GuessingGame {
   public static void main(String[] args) {
-    System.out.println("Hi! What's your name? ");
+    System.out.println("Howdy, what's your name?");
+    System.out.println("(type in your name) ");
     Scanner scan = new Scanner(System.in);
     String name = scan.nextLine();
+    System.out.println();
+
+    Random rand = new Random();
+    final int UPPER_BOUND = 100;
+    int number = rand.nextInt(UPPER_BOUND);
+
+    System.out.println(name + ", I'm thinking of a number between 1 and " + UPPER_BOUND);
+    System.out.println("Try to guess my number.");
+    System.out.println("Your guess? ");
+    int tries = 0;
+
+    while (true) {
+      String guess = scan.nextLine();
+      tries += 1;
+      try {
+        int guessInt = Integer.parseInt(guess);
+
+        if (guessInt == number) {
+          System.out.println("Well done, " + name + "! You found my number in " + tries + " tries!");
+          break;
+        } else if (guessInt < number) {
+          System.out.println("Your guess is too low, try again.");
+          guess = scan.nextLine();
+        } else {
+          System.out.println("Your guess is too high, try again.");
+          guess = scan.nextLine();
+        }
+
+      } catch (NumberFormatException e) {
+        System.out.println("That's not an integer. Game over.");
+      }
+
+    }
+    scan.close();
   }
 }
