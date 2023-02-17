@@ -3,8 +3,7 @@ package unit1.MarsWeek.src;
 import java.util.Scanner;
 
 public class MarsExpedition {
-  // public MarsExpedition() {
-    public static void main(String[] args) {
+  public MarsExpedition() {
     Scanner scan = new Scanner(System.in);
     System.out.println("Booting up...");
     System.out.println("What's your name?");
@@ -47,6 +46,18 @@ public class MarsExpedition {
     } else if (vehicleChoice.equalsIgnoreCase("c")) {
       vehicle = "pterodactyl";
     }
+
+    System.out.println("You're now ready to explore Mars, " + name + "!");
+    System.out.println(
+        "You'll have " + teammates + " members on your team, and you'll all be munching on " + snack + " together.");
+    System.out
+        .println("If you get tired of walking, we've equipped you with a state of the art " + vehicle + ". Good luck!");
+    System.out.println("Your mission starts in...");
+    for (int t = 5; t > 0; t--) {
+      System.out.println(t);
+    }
+    System.out.println("BLASTOFF!!!!!!!!");
+
     scan.close();
   }
 }
