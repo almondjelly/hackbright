@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GuessingGame {
-  public static void main(String[] args) {
+  public GuessingGame() {
     System.out.println("Howdy, what's your name?");
     System.out.println("(type in your name) ");
     Scanner scan = new Scanner(System.in);
