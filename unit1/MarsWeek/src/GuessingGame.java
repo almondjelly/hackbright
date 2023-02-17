@@ -9,7 +9,6 @@ public class GuessingGame {
     System.out.println("(type in your name) ");
     Scanner scan = new Scanner(System.in);
     String name = scan.nextLine();
-    System.out.println();
 
     Random rand = new Random();
     final int UPPER_BOUND = 100;
@@ -23,25 +22,26 @@ public class GuessingGame {
     while (true) {
       String guess = scan.nextLine();
       tries += 1;
+      int guessInt;
+
       try {
-        int guessInt = Integer.parseInt(guess);
-
-        if (guessInt == number) {
-          System.out.println("Well done, " + name + "! You found my number in " + tries + " tries!");
-          break;
-        } else if (guessInt < number) {
-          System.out.println("Your guess is too low, try again.");
-          guess = scan.nextLine();
-        } else {
-          System.out.println("Your guess is too high, try again.");
-          guess = scan.nextLine();
-        }
-
+        guessInt = Integer.parseInt(guess);
       } catch (NumberFormatException e) {
         System.out.println("That's not an integer. Game over.");
+        scan.next();
+        continue;
       }
 
+      if (guessInt == number) {
+        System.out.println("Well done, " + name + "! You found my number in " + tries + " tries!");
+        break;
+      } else if (guessInt < number) {
+        System.out.println("Your guess is too low, try again.");
+      } else {
+        System.out.println("Your guess is too high, try again.");
+      }
     }
+
     scan.close();
   }
 }
