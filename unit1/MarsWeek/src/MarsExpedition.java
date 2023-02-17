@@ -29,5 +29,11 @@ public class MarsExpedition {
     } else {
       System.out.println("Great!");
     }
+
+    System.out.println("You're allowed to bring a snack with you. What do you want to bring?");
+    String snack = scan.nextLine();
+    System.out.println("You got it. We'll pack " + snack + " just for you.");
+
+    scan.close();
   }
 }
