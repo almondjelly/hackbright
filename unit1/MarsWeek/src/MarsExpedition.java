@@ -34,6 +34,19 @@ public class MarsExpedition {
     String snack = scan.nextLine();
     System.out.println("You got it. We'll pack " + snack + " just for you.");
 
+    System.out.println("What vehicle do you want to use? You have three choices:"
+        + "\nA - skateboard"
+        + "\nB - unicycle"
+        + "\nC - pterodactyl");
+    String vehicleChoice = scan.nextLine();
+    String vehicle = "roller skates";
+    if (vehicleChoice.equalsIgnoreCase("a")) {
+      vehicle = "skateboard";
+    } else if (vehicleChoice.equalsIgnoreCase("b")) {
+      vehicle = "unicycle";
+    } else if (vehicleChoice.equalsIgnoreCase("c")) {
+      vehicle = "pterodactyl";
+    }
     scan.close();
   }
 }
